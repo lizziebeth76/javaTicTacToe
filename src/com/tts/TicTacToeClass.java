@@ -1,10 +1,10 @@
 package com.tts;
 
-public class Main {
-
-    public static void main(String[] args) {
-
-        public class TicTacToeClass {
+public class TicTacToeClass {
+//
+//    public static void main(String[] args) {
+//
+//        public class TicTacToeClass {
 
 // Instance Variables: CREATES THE BOARD, AND DECLARES A VARIABLE TO KEEP TRACK OF TURNS TAKEN:
             private char[][] board;
@@ -24,26 +24,47 @@ public class Main {
             // Accessor Methods
 
             public boolean isWinner( char p ) {
-
+                if (board[0][0] == p && board [0][1] ==p && board [0][2] == p) {
+                    return true;
+                }
+                    else if (board[1][0] == p && board [1][1] ==p && board [1][2] == p){
+                    return true;
+                 }
+                else if (board[2][0] == p && board [2][1] ==p && board [2][2] == p){
+                    return true;
+                }
+                else if (board[0][0] == p && board [1][0] ==p && board [2][0] == p){
+                    return true;
+                }
+                else if (board[0][1] == p && board [1][1] ==p && board [2][1] == p){
+                    return true;
+                }
+                else if (board[0][2] == p && board [1][2] ==p && board [2][2] == p){
+                    return true;
+                }
+                else if (board[0][0] == p && board [1][1] ==p && board [2][2] == p){
+                    return true;
+                }
+                else if (board[2][0] == p && board [1][1] ==p && board [0][2] == p){
+                    return true;
+                }
                 return false;
             }
 
             public boolean isFull() {
-                if (turns == 9) {
+                return turns == 9;
                     return true;
-                }
-                else {
+
                 return false;
-//                LIONEL SAYS THE ABOVE CAN ALSO BE REPLACED WITH SIMPLY "RETURN TURNS == 9"
             }
 
             public boolean isCat() {
-                if (turns == 9 && NO WINNER)
+                if (turns == 9 && !isWinner('X') && !isWinner('O') {
                     return true;
                 }
-                else {
                     return false;
             }
+
 
             public boolean isValid( int r, int c ) {
                 if ( 0 <= r && r <= 2 && 0 <= c && c <= 2 )
@@ -64,7 +85,6 @@ public class Main {
                 else
                     return '@';
             }
-// I HAE ZERO IDEA WHAT IS GOING ON BELOW THIS LINE!!!!
 
             public void displayBoard()
             {
@@ -77,8 +97,11 @@ public class Main {
             }
 
             // Modifiers
-            public void playMove( char p, int r, int c )
-            {
+            public void playMove( char p, int r, int c ) {
+                if (turns <= 9) {
+                    board [r] [c] = p;
+                    turns++;
+                }
             }
 
         }
