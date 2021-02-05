@@ -27,7 +27,7 @@ public class TicTacToeClass {
                 if (board[0][0] == p && board [0][1] ==p && board [0][2] == p) {
                     return true;
                 }
-                    else if (board[1][0] == p && board [1][1] ==p && board [1][2] == p){
+                else if (board[1][0] == p && board [1][1] ==p && board [1][2] == p){
                     return true;
                  }
                 else if (board[2][0] == p && board [2][1] ==p && board [2][2] == p){
@@ -52,14 +52,14 @@ public class TicTacToeClass {
             }
 
             public boolean isFull() {
-                return turns == 9;
+                if(turns == 9) {
                     return true;
-
+            }
                 return false;
             }
 
             public boolean isCat() {
-                if (turns == 9 && !isWinner('X') && !isWinner('O') {
+                if (turns == 9 && !isWinner('X') && !isWinner('O')) {
                     return true;
                 }
                     return false;
@@ -74,10 +74,9 @@ public class TicTacToeClass {
             }
 
             public int numTurns() {
-                while (r + c <= 9) {
+//                while (r + c <= 9) {
                      return turns;
                     }
-                }
             public char playerAt( int r, int c )
             {
                 if ( isValid(r,c) )
@@ -105,5 +104,4 @@ public class TicTacToeClass {
             }
 
         }
-    }
-}
+
